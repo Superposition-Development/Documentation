@@ -1,5 +1,5 @@
-#import "../include/sp_preamble.typ": *
-#import "../include/sp_utils.typ": *
+#import "/Spectator/include/sp_preamble.typ": *
+#import "/Spectator/include/sp_utils.typ": *
 
 #show: doc => default_style(doc)
 
@@ -25,7 +25,7 @@ Since the game is still early in development, we can't specify many things such 
 
 = Map generation
 
-The game map is procedurally generated in a dungeon-like way. This is still being implemented.
+The map is generated using a queue system and prefabs
 
 = Game mechanics
 
