@@ -1,5 +1,5 @@
-#import "include/sp_preamble.typ": *
-#import "/include/sp_utils.typ": *
+#import "../include/sp_preamble.typ": *
+#import "../include/sp_utils.typ": *
 
 #show: doc => default_style(doc)
 
