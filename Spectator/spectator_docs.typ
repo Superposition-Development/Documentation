@@ -33,7 +33,7 @@ Create a Node3D child of the room node named "doorCollection", \
 Place a node as a "wrapper" inside of this object, this will hold the door and align marker \
 The wrapper may not be rotated by any means, the children can. \
 This node will contain a door mesh, and a Marker3D named "align" \
-Orient the Marker3D as such that the bright blue line points out of the room, as if pointing to where the next room will generate.
+Orient the Marker3D as such that the bright blue line (negative Z) points out of the room, as if pointing to where the next room will generate.
 
 
 
