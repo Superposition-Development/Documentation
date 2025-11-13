@@ -35,6 +35,31 @@ The wrapper may not be rotated by any means, the children can. \
 This node will contain a door mesh, and a Marker3D named "align" \
 Orient the Marker3D as such that the bright blue line (negative Z) points out of the room, as if pointing to where the next room will generate.
 
+= Furniture Generation
+This section is focused on the mechanical decisions for furniture as opposed to art decisions. The furniture generation system allows for rooms to be randomly furnished.
+The key scripts relevant to this are `EnvironmentInteractableBase.cs, FurnitureRegion.cs` and `FurnitureObject.cs`
+
+A sample room with this furniture system may resemble one shown in the following figure. 
+#figure(
+    image("/Spectator/Assets/Image/Furniture.png"),
+    caption:[
+        A room with two Furniture Regions
+    ]
+)
+
+In context, the two relevant components are the yellow CSGBox3D nodes, and the marker as a child of them. 
+The yellow volume indicates the maximum area that a chosen furniture mesh may occupy. This is to avoid any issues with furniture that is too large to unintentionally block a passage. Inside the region is a Marker3D object with the blue visible Z-axis indicating ideal direction. This is to ensure cabinets or closets do not generate facing a wall and are easily accessible for the player. 
+
+In the case the marker is not present a random rotation will be assigned. Each volume uses the FurnitureRegion.cs script.
+Now for making furniture.
+== Furniture Design
+#figure(
+    image("/Spectator/Assets/Image/OpenCabinet.png",height:40%),
+    caption:[
+        An open cabinet mesh with a yellow volume and item inside.
+    ]
+)
+The yellow volume is a CSGBox3D as a child of the root node of the scene that contains the prefab of the mesh. Inside of the mesh are CSGBox3D nodes that indicate a location for an item to generate, running `FurnitureItemGen.cs` respectively. An AnimationPlayer node is also present as a child of the root node that contains all relevent animations such as opening or closing. TODO: continue writing
 
 
 = Game mechanics
